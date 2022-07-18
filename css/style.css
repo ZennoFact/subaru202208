@@ -1,0 +1,37 @@
+body {
+    background-color: #eeeeee;
+    color: #242424;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1#title {
+    /* 文字の上下の余白　文字の左右の余白 */
+    padding: 0.4em 0.5em;
+    color: #3355aa;
+    background-color: #f4f4f4f4;
+    border-left: solid 5px #7db4e6;
+    border-bottom: solid 3px #d7d7d7;
+}
+
+/* div div {
+    background-color: #fff;
+} */
+u div.container {
+    background-color: #fff;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+ul li {
+    color: #242424;
+    border-left: solid 8px #3355aa;
+    background: rgba(6, 160, 244, 0.1);
+    margin-bottom: 5px;
+    padding: 0.5rem;
+    width: 25%;
+
+    font-weight: bold;
+}
