@@ -1,8 +1,17 @@
 body {
     background-color: #eeeeee;
     color: #242424;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
+h1#title {
     color: #3355aa;
+}
+
+/* div div {
+    background-color: #fff;
+} */
+
+div.container {
+    background-color: #fff;
 }
