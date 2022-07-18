@@ -6,8 +6,21 @@ HTML/CSS，JavaScriptあたりを使って緩く楽しむ2日間
 ## Day1
 
 1. GitHubとVisualStudio CodeとHTML
+
+- 1-1. 文章とタグについて，h1タグとpタグ
+- 1-2. divタグ
+- 1-3. ulタグとliタグ
+- 1-4. aタグ
+
 2. CSSとURLとフォルダ階層
+
+- 2-1.
+- 2-2.
+
 3. HTMLとJavaScriptとブラウザ
+
+- 3-1.
+- 3-2.
 
 ## Day2
 
