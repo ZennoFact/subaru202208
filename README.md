@@ -23,8 +23,11 @@ HTML/CSS，JavaScriptあたりを使って緩く楽しむ2日間
 
 3. HTMLとJavaScriptとブラウザ
 
-- 3-1.
-- 3-2.
+- 3-1. JavaScriptと変数と配列
+- 3-2. JavaScriptファイルの分離
+- 3-3. 条件分岐とループ
+- 3-4. DOM要素の取得と作成
+- 3-5. Templateタグの利用
 
 ## Day2
 
