@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+
+  background-color: #fff;
+  color: #242424;
+  font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+}
+
+header,
+main {
+  padding: 20px;
+}
+
+header {
+  background: #ddd;
+  width: 20%;
+
+  font-size: 1.6em;
+}
+
+main {
+  background: #eee;
+  width: 80%;
+  display: flex;
+  justify-content: left;
+}
+
+section {
+  padding: 10px;
+}
+
+section.timeline {
+  width: 65%;
+}
+
+section.option {
+  width: 35%;
+}
+
+@media screen and (max-width: 1260px) {
+  #root {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header,
+  main {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+  }
+
+  section.option {
+    display: none;
+  }
+
+  /* .archive div {
+    width: 70%;
+    margin: 20px auto;
+  } */
+}
