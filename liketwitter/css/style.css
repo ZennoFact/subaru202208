@@ -1,0 +1,239 @@
+/* 基本的にベースは角丸と円，ツイートだけ角張ってる */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+
+  background-color: #fff;
+  color: #242424;
+  font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+}
+
+header,
+main {
+  padding: 20px;
+}
+
+header {
+  background: #ddd;
+  width: 30%;
+
+  font-size: 1.6em;
+}
+
+main {
+  background: #eee;
+  width: 70%;
+  display: flex;
+  justify-content: left;
+}
+
+section {
+  padding: 10px;
+}
+
+section.main {
+  width: 65%;
+}
+
+section.option {
+  width: 35%;
+}
+
+.tweet-area {
+  display: flex;
+  justify-content: left;
+  background: #bbb;
+  border: 1px solid #666;
+  /*コレ*/
+  margin: 0 0 -1px;
+}
+
+.col {
+  padding: 5px;
+}
+
+.col.icon {
+  width: 64px;
+}
+
+.col.tweet {
+  flex: 1;
+  background: #ccc;
+  font-size: 16px;
+}
+
+
+
+.tweet-editor {
+  /* color: #242424; */
+  width: 80%;
+  /* height: 24px; */
+  line-height: 24px;
+  margin: 10px;
+  resize: none;
+  font-size: 22px;
+  border: 0 solid black;
+  outline: none;
+}
+
+div.col.tweet div.row div.user-data span.name {
+  font-weight: bold;
+}
+
+div.col.tweet div.row div.user-data span.id {
+  color: #424242;
+}
+
+
+.icon.img {
+  width: 64px;
+  height: 64px;
+  /* 角の半径の指定 */
+  border-radius: 50%;
+}
+
+.button {
+  border: 0 solid black;
+  transition: 500ms;
+  padding: 10px 5px;
+  transition: 500ms;
+  border-radius: 26px;
+  margin: 5px;
+
+  user-select: none;
+}
+
+button.button {
+  height: 52px;
+}
+
+div.button {
+  display: table;
+}
+
+div.button span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: #ddd;
+  transition: 500ms;
+}
+
+.button.tweet-button {
+  width: 80%;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1b98f0;
+}
+
+.button.tweet-button.post {
+  background-color: #8ECDF8;
+}
+
+.button.tweet-button.active {
+  background-color: #1b98f0;
+}
+
+.button.tweet-button.active:hover {
+  background-color: #1c8cd8;
+}
+
+.row {
+  width: 100%;
+}
+
+.row.flex {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.row.menu {
+  display: table;
+  background-color: #aaa;
+}
+
+.row-item {
+  margin: 0 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.row-item.space {}
+
+.character-count {
+  vertical-align: center;
+  margin: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+#progress {
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 32px;
+  height: 32px;
+}
+
+#count {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+}
+
+
+.row-item.button-area {
+  width: 160px;
+
+}
+
+.reaction {
+  display: table-cell;
+  width: 25%;
+}
+
+.circle-button {
+  text-align: center;
+  vertical-align: center;
+  border: 0 solid black;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.circle-button:hover {
+  background-color: rgba(27, 152, 240, 0.25);
+}
+
+@media screen and (max-width: 1260px) {
+  #root {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header,
+  main {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+  }
+
+  section.option {
+    display: none;
+  }
+}
