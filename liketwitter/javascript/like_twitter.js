@@ -1,6 +1,6 @@
 console.log('いぇぃ！');
 
-// 自分が誰なのか，本来はサーバサイドでデータをもらう
+// 自分が誰なのか，本来はこんな感じでサーバサイドでデータをもらう
 // const iconPath = "localhost:5500/liketwitter/images/cock.png"
 const iconPath = "../images/cock.png"
 const id = "@nanashi-no-gonbe";
@@ -8,6 +8,13 @@ const name = "名前はまだない";
 
 const maxTextLength = 140; // 本来はdouble byteで140文字
 const circleMaxValue = 56.5487;
+
+// 色を変数化したよ。ちなみに「オブジェクト」というデータの集合体にしたので，使い方は「color.色名」になります
+const color = {
+    blue: "#1D9BF0",
+    yellow: "#FFD400",
+    red: "#FF0000"
+};
 
 const textArea = document.querySelector('.tweet-editor');
 textArea.addEventListener('input', event => {
@@ -24,26 +31,20 @@ textArea.addEventListener('input', event => {
 
 
     document.querySelector('#progress').setAttribute('aria-valuenow', parcentage);
+    
     let svg = document.querySelector('#circle');
     if(textLength < 130) {
-        // svg.stroke = '#EFF3F4';
-        svg.style = `stroke-dashoffset: ${strokeDashOffset}; stroke-dasharray: 56.5487;`;
-        svg.setAttribute('stroke', '#1D9BF0');
-        document.querySelector('#count p').innerHTML = "";
+        setRing(color.blue, strokeDashOffset);
     } else if(textLength < 140) {
-        svg.style = `stroke-dashoffset: ${strokeDashOffset}; stroke-dasharray: 56.5487;`;
-        svg.setAttribute('stroke', '#FFD400');
-        document.querySelector('#count p').innerHTML = maxTextLength -textLength;
-    } else if(textLength === 140) {
-        svg.style = `stroke-dashoffset: ${strokeDashOffset}; stroke-dasharray: 56.5487;`;
-        svg.setAttribute('stroke', '#FF0000');
-        document.querySelector('#count p').innerHTML = maxTextLength -textLength;
+        setRing(color.yellow, strokeDashOffset, maxTextLength - textLength);
+    } else if(textLength < 150) {
+        setRing(color.red, strokeDashOffset, maxTextLength - textLength);
     } else {
-        svg.setAttribute('stroke', '#FF0000');
-        document.querySelector('#count p').innerHTML = maxTextLength -textLength;
+        setRing(color.red,　0); // 0にしておかないとリングの色が反転していきます
     }
-    
 
+    strokeDashOffset
+ 
     console.log(textLength)
 
     Array.prototype.forEach.call(tweetButtons, button => {
@@ -58,6 +59,13 @@ textArea.addEventListener('input', event => {
 });
 
 
+function setRing(color, strokeDashOffset, count = "") {
+    let svg = document.querySelector('#circle');
+    svg.style = `stroke-dashoffset: ${strokeDashOffset}; stroke-dasharray: 56.5487;`;
+    svg.setAttribute('stroke', color);
+    document.querySelector('#count p').innerHTML = count;
+}
+
 // ボタンの取得
 const buttons = document.querySelectorAll(".post");
 Array.prototype.forEach.call(buttons, button => {
@@ -67,6 +75,7 @@ Array.prototype.forEach.call(buttons, button => {
             const textarea = document.querySelector('.tweet-editor');
             tweet(id, name, textarea.value, iconPath);
             textarea.value = '';
+            setRing(color.blue, circleMaxValue); // ここで文字数カウントのリングもリセットする
             textarea.focus();
         }
     }, false);
@@ -95,7 +104,7 @@ function tweet(id, name, tweet, path) {
         content.innerHTML = tweet;
 
         
-        timeline.appendChild(clone);
+        timeline.prepend(clone);
     } else {
         // 今日はやらないけど，いちいち要素をプログラムで作って追加していくという方法になります。
     }
